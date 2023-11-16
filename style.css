@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    margin: 0;
+}
+
+
+/* HEADER */
+
+.header{
+    padding: 2.25rem 13.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+}
+
+.header-nav__list{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.header-nav__link{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* HERO */
+
+.hero{
+    height: 512px;
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.hero-content{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 64px;
+    color: #FFFFFF;
+}
+
+.hero-content__button{
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;;
+    width: 183px;
+    height: 71px;
+    border-radius: 50px;
+    margin: 4.75rem 0 5.5rem 0;
+    border: 0;
+    background-color: #ffffff;
+    cursor: pointer;
+}
