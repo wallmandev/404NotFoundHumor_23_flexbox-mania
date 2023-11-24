@@ -1,67 +1,337 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
 }
 
-h1{
-    margin: 0;
+main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0px auto;
 }
 
-
-/* HEADER */
-
-.header{
-    padding: 2.25rem 13.5rem;
-    display: flex;
-    justify-content: space-between;
+.menu__button {
+  background-color: transparent;
+  color: black;
+  border: 0;
+  padding: 0;
+  font-size: 16px;
+  text-decoration: none;
+  display: none;
+  align-items: center;
+  width: 34px;
+  height: 24px;
+  position: relative;
+}
+.menu__button:hover {
+  background-color: transparent;
+}
+.menu__button--close .hamburger,
+.menu__button:focus .hamburger {
+  height: 0;
+}
+.menu__button--close .hamburger::before,
+.menu__button--close .hamburger::after,
+.menu__button:focus .hamburger::before,
+.menu__button:focus .hamburger::after {
+  top: 0;
+  transition: top 0.2s, transform 0.2s 0.2s, width 0s 0.2s;
+}
+.menu__button--close .hamburger::before,
+.menu__button:focus .hamburger::before {
+  transform: rotate(-45deg);
+}
+.menu__button--close .hamburger::after,
+.menu__button:focus .hamburger::after {
+  width: 100%;
+  transform: rotate(45deg);
 }
 
-.header-logo{
-    display: flex;
-    align-items: center;
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: black;
+  transition: height 0s 0.2s;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: inherit;
+  position: absolute;
+  top: -8px;
+  transition: top 0.2s 0.2s, transform 0.2s;
 }
 
-.header-nav__list{
-    font-family: 'Ubuntu', sans-serif;
-    display: flex;
-    gap: 3rem;
-    list-style: none;
+.hamburger::after {
+  right: 0;
+  top: 8px;
 }
 
-.header-nav__link{
-    text-decoration: none;
-    color: black;
+.logo {
+  height: 24px;
+  width: 95px;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
-
-/* HERO */
-
-.hero{
-    height: 512px;
-    background-color: #333333;
-    display: flex;
-    justify-content: center;
-    align-items: end;
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 48px;
 }
 
-.hero-content{
-    font-family: 'Ubuntu', sans-serif;
-    display: flex;
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0 10px;
+  font-family: 'Ubuntu';
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 512px;
+  width: 100vw;
+  background-color: #333333;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 111px;
+}
+.hero h2 {
+  font-family: 'Ubuntu';
+  font-size: 64px;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+.hero button {
+  font-family: 'Ubuntu';
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  width: 183px;
+  height: 71px;
+  border-radius: 100px;
+  align-self: center;
+  font-size: 20px;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 1000px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  gap: 32px;
+}
+.card,
+.wide-card {
+  border-bottom: 1px solid #000000;
+  height: 544px;
+}
+.card p,
+.wide-card p{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.card {
+  width: 311px;
+}
+.wide-card {
+  width: 640px;
+}
+
+.card img,
+.wide-card img {
+  height: 288px;
+  width: 311px;
+  display: block;
+  background: #e0e0e0;
+}
+
+.wide-card img {
+  width: 640px;
+}
+
+#context-menu {
+  position: relative;
+  width: auto;
+  height: 20px;
+  margin-top: 16px;
+  margin-bottom: -36px;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-style: italic;
+  height: 554px;
+  gap: 32px;
+}
+.testimonial .circle {
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #c4c4c4;
+}
+
+.testimonial h3 {
+  font-family: Ubuntu;
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 37px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.testimonial p {
+  font-family: Ubuntu;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.footer-container {
+  font-family: ubuntu;
+  height: 447px;
+  background: #4f4f4f;
+  display: flex;
+  align-items: top;
+  justify-content: space-evenly;
+  color: #ffffff;
+}
+
+.footer-container h3 {
+  font-size: 30px;
+}
+
+.footer-item {
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 400;
+
+  letter-spacing: 0em;
+  text-align: left;
+  max-width: 20%;
+  line-height: 2;
+  line-break: auto;
+  padding-top: 40px;
+}
+
+.footer-container img {
+  width: 40px;
+  margin-right: 20px;
+}
+
+.footer-container ul {
+  list-style: none;
+}
+
+.footer-container li {
+  margin-bottom: 20px;
+}
+
+.footer-container a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-container a:visited {
+  color: #ffffff;
+}
+
+.footer-container a:hover {
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .main-nav ul {
     flex-direction: column;
     align-items: center;
-    font-size: 64px;
-    color: #FFFFFF;
-}
+  }
 
-.hero-content__button{
-    font-size: 20px;
-    font-family: 'Ubuntu', sans-serif;;
-    width: 183px;
-    height: 71px;
-    border-radius: 50px;
-    margin: 4.75rem 0 5.5rem 0;
-    border: 0;
-    background-color: #ffffff;
-    cursor: pointer;
+  .hamburger {
+    display: block;
+  }
+
+  .menu__button {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hero {
+    width: auto;
+  }
+  .wide-card {
+    display: none;
+  }
+  .first-card {
+    display: none;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: left;
+    height: auto;
+  }
+
+  .footer-nav {
+    display: none;
+  }
+
+  .footer-item {
+    max-width: 75%;
+    flex: 1;
+    padding: 40px;
+  }
 }
